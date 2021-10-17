@@ -27,9 +27,11 @@ function renderFire(){
         
         for(let column = 0; column < fireWidth; column++){
             const pixelIndex = column + (fireWidth * row);
-            html += '<td> '
-            html += pixelIndex;
-            html += ' </td>'
+            const fireIntensity = firePixelsArray[pixelIndex];
+            html += '<td> ';
+            html += `<div class="pixel-index">${pixelIndex}</div>`;
+            html += fireIntensity;
+            html += ' </td>';
         }
 
         html += '</tr>';
@@ -39,5 +41,7 @@ function renderFire(){
     document.querySelector('#fireCanvas').innerHTML = html;
 
 }
+
+
 start();
 
