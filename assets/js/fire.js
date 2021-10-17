@@ -4,6 +4,7 @@ const fireHeight = 10;
 
 function start(){
     createFireDataStructure();
+    createFireSource();
     renderFire();
     console.log(firePixelsArray);
 }
@@ -17,7 +18,7 @@ function createFireDataStructure(){
 }
 
 function createFirePropagation(){
-
+    
 }
 
 function renderFire(){
@@ -42,6 +43,15 @@ function renderFire(){
 
 }
 
+function createFireSource(){
+    for(let column = 0; column <= fireWidth; column++){
+        const overFlowPixelIndex = fireWidth * fireHeight;
+        const pixelIndex = (overFlowPixelIndex - fireWidth) + column;
+
+        firePixelsArray[pixelIndex] = 36; 
+    }
+
+}
 
 start();
 
